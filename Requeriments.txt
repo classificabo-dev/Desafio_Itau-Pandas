@@ -1,0 +1,95 @@
+Perfeito! 🎯 Para organizar seu desafio em **Pandas** (mini-sistema bancário), é essencial ter um documento de **requirements** que descreva os objetivos, funcionalidades e dependências do projeto. Aqui vai um modelo bem estruturado:
+
+---
+
+# 📑 Requirements – Projeto Banco em Pandas
+
+## 1. Objetivo
+Desenvolver um sistema simples de gerenciamento bancário utilizando **Python + Pandas**, capaz de:
+- Criar contas de clientes.
+- Registrar transações (depósitos, saques e transferências).
+- Consultar relatórios consolidados.
+- Exportar os dados em formato **JSON**.
+
+---
+
+## 2. Funcionalidades
+
+### 🧑‍💼 Gestão de Clientes e Contas
+- Criar novas contas com:
+  - ID do cliente
+  - Nome
+  - Número da conta
+  - Saldo inicial
+- Atualizar saldo automaticamente após cada transação.
+
+### 💸 Transações
+- **Depósito**: adiciona valor ao saldo da conta.
+- **Saque**: subtrai valor do saldo da conta.
+- **Transferência**: movimenta valor entre duas contas distintas.
+- Registro automático de cada transação com:
+  - ID da transação
+  - Conta de origem/destino
+  - Tipo (depósito, saque, transferência)
+  - Valor
+  - Data e hora
+
+### 📊 Relatórios
+- Consultar todas as contas com seus saldos.
+- Consultar todas as transações realizadas.
+- Filtrar transações por cliente ou tipo.
+- Exportar relatório consolidado em **JSON**.
+
+---
+
+## 3. Estrutura de Dados
+
+- **DataFrame Contas**
+  - `id_cliente` (int)
+  - `nome` (string)
+  - `conta` (string)
+  - `saldo` (float)
+
+- **DataFrame Transações**
+  - `id_transacao` (int)
+  - `conta_origem` (string ou null)
+  - `conta_destino` (string ou null)
+  - `tipo` (string: "deposito", "saque", "transferencia")
+  - `valor` (float)
+  - `data` (datetime)
+
+---
+
+## 4. Dependências
+
+- **Python 3.9+**
+- **Bibliotecas:**
+  - `pandas`
+  - `json` (nativo do Python)
+  - `datetime` (nativo do Python)
+
+Arquivo `requirements.txt`:
+
+```
+pandas>=2.0.0
+```
+
+---
+
+## 5. Saídas Esperadas
+- Arquivo `relatorio_banco.json` contendo:
+  - Lista de contas com saldos atualizados.
+  - Lista de transações realizadas.
+- Possibilidade de leitura e análise dos relatórios diretamente via Pandas.
+
+---
+
+## 6. Extensões Futuras (opcional)
+- Autenticação de clientes.
+- Relatórios em CSV/Excel.
+- Dashboard com gráficos de movimentação.
+- Integração com banco de dados (SQLite ou PostgreSQL).
+
+---
+
+
